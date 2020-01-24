@@ -1,0 +1,146 @@
+<html>
+
+<head>
+    <title>FLAMES</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/images/favicon2_GAURANG.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="./flames.js"></script>
+	<noscript>
+        <META HTTP-EQUIV="Refresh" CONTENT="0;URL=/jsDisabledErrorPage.html">
+    </noscript>
+	<style>
+	@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+	
+	html,body {
+	   font-family: 'Poppins', sans-serif;
+	}
+	
+	h5,ul li a:not(.fa) {
+		font-family: 'Poppins', sans-serif!important;
+	}
+	
+	.bordered {
+		border:15px ridge #ddd;
+		padding:50 50;
+		border-radius:0px;
+	}
+
+	#flamescalc {
+		
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		margin-top:10px;
+		background-color: crimson;
+	}
+
+	#p1 {
+	color:ivory;
+	font-weight:bold;
+	font-size:20px;
+	text-shadow: 2px 2px 4px #000;
+	font-family: 'Poppins', sans-serif;
+	}
+
+	#result{
+	font-size:4vmax;
+	font-weight:bold;
+	color:white;
+	
+	border:10px groove white;
+	border-radius:15px;
+	display:none;
+	}
+
+	hr {
+		border: none;
+		height: 3px;
+		color: #eee;
+		background-color: #eee;
+	}
+	
+	#btnFlames,#btnReset {
+	width:85px;
+	border-radius:5px;
+	text-align:center;
+	font-family: 'Poppins', sans-serif;
+	}
+	
+	#name1,#name2 {
+		text-align:center;
+		font-weight:bold;
+		font-size:2vmax;
+		color:crimson;
+		letter-spacing:2px;
+		font-family: 'Poppins', sans-serif;
+	}
+	
+	#name1::placeholder,#name2::placeholder {
+		color: #777;
+		font-weight:normal;
+		letter-spacing:0px;
+	}
+	
+	@media screen and (max-width: 427px) {
+		#btnFlames,#btnReset {
+			
+			width:80px;
+		}
+		#name1,#name2 {
+			width:180px!important;
+		}
+		.bordered {
+			padding:15 15;
+		}
+	}
+	</style>
+</head>
+
+<body onload="urlQr();">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a id="pagetitle" class="navbar-brand" href="/index.html">GAURANG</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav bg-dark mr-auto">
+                
+                
+                    
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+	
+	<br/>
+	<div class=" bordered container" id="flamescalc">	
+	<p id="p1">Type two names to calculate FLAMES !</p><br/>	
+	<form onsubmit="return loveCalc();">
+	<center>
+	<input type="text" class="form-control" id="name1" name="yname" placeholder="your name" onkeypress="return ((event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32));" onkeyup="updateURL()" required/>
+	<br/>
+	<input type="text" class="form-control" id="name2" name="pname" placeholder="your partner name" onkeypress="return ((event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32));" onkeyup="updateURL()" required/>
+	<br/>
+	<input id="btnFlames" class="btn btn-danger" type="submit" value="FLAMES" />
+	<input id="btnReset" class="btn btn-light" type="reset" onclick="document.getElementById('result').style.display='none';" value="Reset" />
+	</center>
+	</form>
+	<br/>
+	<div id="result" class="text-center"></div>
+	</div>
+	<br/>
+	
+    </div>
+    <footer>
+        
+    </footer>
+</body>
+
+</html>
